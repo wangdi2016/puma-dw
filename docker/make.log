@@ -1,0 +1,43 @@
+[wangdi@NCI-02277577-ML ~/work/Sambit/HPV/ann/puma/docker]make
+docker build --tag=kvdlab/puma:1.2.2 .
+[+] Building 190.4s (10/10) FINISHED                                                                                                                                                          docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                                          0.0s
+ => => transferring dockerfile: 669B                                                                                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/python:3.8.5                                                                                                                                               1.0s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                 0.0s
+ => [internal] load .dockerignore                                                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                                                               0.0s
+ => [1/5] FROM docker.io/library/python:3.8.5@sha256:e9b7e3b4e9569808066c5901b8a9ad315a9f14ae8d3949ece22ae339fff2cad0                                                                                       106.0s
+ => => resolve docker.io/library/python:3.8.5@sha256:e9b7e3b4e9569808066c5901b8a9ad315a9f14ae8d3949ece22ae339fff2cad0                                                                                         0.0s
+ => => sha256:227e5a01a9a9e7bffb62c1491127e19bebcd0b1cfa701675b6c28c1115d313fb 2.22kB / 2.22kB                                                                                                                0.0s
+ => => sha256:4b1202c4ddac582c7164a6b65b13a2442759bc04660da9ca7d62fabf75225482 7.68MB / 7.68MB                                                                                                                4.1s
+ => => sha256:f110d64c20212ec5e7a7f0622d610346edbd6e508fde94679db44e0f2827b2f9 9.98MB / 9.98MB                                                                                                                4.5s
+ => => sha256:e9b7e3b4e9569808066c5901b8a9ad315a9f14ae8d3949ece22ae339fff2cad0 2.36kB / 2.36kB                                                                                                                0.0s
+ => => sha256:cd62ba8e4bad91e10acc74da8a4867812f2ecbf32f92885d0cadad210fc1fb0b 8.42kB / 8.42kB                                                                                                                0.0s
+ => => sha256:d3a32671b6316bd11f4bf18cb034394ac94d2bb3bc6d09de388b19b06fb94b91 49.18MB / 49.18MB                                                                                                             26.3s
+ => => sha256:ad7c41999aa9f871546022553f35d4fbbd39cd2bfe8e1a03cce7b1bd78d2a5b0 52.16MB / 52.16MB                                                                                                             32.6s
+ => => sha256:7b0157cfd609602e37c3d21e409001f6bc0f2b58f2a6a91519d26ed4b164dedb 183.79MB / 183.79MB                                                                                                          101.6s
+ => => extracting sha256:d3a32671b6316bd11f4bf18cb034394ac94d2bb3bc6d09de388b19b06fb94b91                                                                                                                     1.4s
+ => => sha256:ff11255613a75367041014989959207ccc3a973747ace191c5586e05048cb31c 6.26MB / 6.26MB                                                                                                               30.2s
+ => => extracting sha256:4b1202c4ddac582c7164a6b65b13a2442759bc04660da9ca7d62fabf75225482                                                                                                                     0.2s
+ => => extracting sha256:f110d64c20212ec5e7a7f0622d610346edbd6e508fde94679db44e0f2827b2f9                                                                                                                     0.1s
+ => => sha256:ce90b30fd090fb7a53a560ef169cf0ca199ceacacd1e3e614d32cb0db0d524f0 17.52MB / 17.52MB                                                                                                             39.8s
+ => => extracting sha256:ad7c41999aa9f871546022553f35d4fbbd39cd2bfe8e1a03cce7b1bd78d2a5b0                                                                                                                     1.5s
+ => => sha256:0994bd0592ba9fe636a2f4e6c7491a13ee32ff07de34a91b0d09fc698b8294ef 233B / 233B                                                                                                                   32.7s
+ => => sha256:aeac7ec27be80fc54aea8104a82cb2cd0089f017e011f29db5709f9a4f3e8f65 2.12MB / 2.12MB                                                                                                               35.0s
+ => => extracting sha256:7b0157cfd609602e37c3d21e409001f6bc0f2b58f2a6a91519d26ed4b164dedb                                                                                                                     3.7s
+ => => extracting sha256:ff11255613a75367041014989959207ccc3a973747ace191c5586e05048cb31c                                                                                                                     0.2s
+ => => extracting sha256:ce90b30fd090fb7a53a560ef169cf0ca199ceacacd1e3e614d32cb0db0d524f0                                                                                                                     0.3s
+ => => extracting sha256:0994bd0592ba9fe636a2f4e6c7491a13ee32ff07de34a91b0d09fc698b8294ef                                                                                                                     0.0s
+ => => extracting sha256:aeac7ec27be80fc54aea8104a82cb2cd0089f017e011f29db5709f9a4f3e8f65                                                                                                                     0.1s
+ => [2/5] RUN apt-get -y update &&         apt-get install -y locales git ncbi-blast+ wget zlib1g-dev muscle &&         locale-gen en_US.UTF-8                                                               13.1s
+ => [3/5] WORKDIR /app                                                                                                                                                                                        0.0s
+ => [4/5] RUN git clone https://github.com/KVD-lab/puma.git &&     python3 -m pip install -r /app/puma/requirements.txt                                                                                      22.5s
+ => [5/5] RUN wget http://meme-suite.org/meme-software/5.0.2/meme-5.0.2.tar.gz &&         tar xvf meme-5.0.2.tar.gz &&         cd meme-5.0.2 &&         ./configure --prefix=/usr/local && make && make ins  47.0s
+ => exporting to image                                                                                                                                                                                        0.8s
+ => => exporting layers                                                                                                                                                                                       0.8s
+ => => writing image sha256:448c9eec84b557480062359aeb7b5991a977e53c1341f2bd73365daaca3e2a0b                                                                                                                  0.0s
+ => => naming to docker.io/kvdlab/puma:1.2.2                                                                                                                                                                  0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview

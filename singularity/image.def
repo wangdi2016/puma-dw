@@ -1,0 +1,16 @@
+BootStrap: docker
+From: kvdlab/puma:1.2.1
+
+%environment
+    PATH=/app/puma/scripts:$PATH
+
+%runscript
+    exec run_puma.py "$@" -d /app/puma/data_dir
+
+%post
+    #
+    # Mount points for TACC directories
+    #
+    mkdir /home1
+    mkdir /scratch
+    mkdir /work
