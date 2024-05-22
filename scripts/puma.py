@@ -44,7 +44,6 @@ from Bio import AlignIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 #from Bio.Alphabet import IUPAC
-from Bio.Alphabet import generic_dna
 from Bio.SeqFeature import SeqFeature
 from Bio.SeqFeature import FeatureLocation
 from Bio.SeqFeature import CompoundLocation
@@ -1925,7 +1924,7 @@ def to_genbank(virus, for_user_dir):
 
     sequence_string = virus['genome']
 
-    sequence_string.seq.alphabet = generic_dna
+    # sequence_string.seq.alphabet = generic_dna
     sequence_object = Seq(sequence_string)
 
     record = SeqRecord(sequence_object,
