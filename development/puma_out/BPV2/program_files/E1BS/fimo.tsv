@@ -96,6 +96,6 @@ ATDATTGTTGNCAACAATCAT	MEME-1	URR	831	851	+	-41.2308	0.0989	0.937	tggaataattgttgt
 ATDATTGTTGNCAACAATCAT	MEME-1	URR	719	739	+	-41.2769	0.0993	0.937	ttcatgccaagtaggcgtaac
 ATDATTGTTGNCAACAATCAT	MEME-1	URR	746	766	+	-41.2769	0.0993	0.937	ctgaaaaacggcgggaaccaa
 
-# FIMO (Find Individual Motif Occurrences): Version 5.0.2 compiled on May 21 2024 at 23:42:54
+# FIMO (Find Individual Motif Occurrences): Version 5.0.2 compiled on May 22 2024 at 03:40:33
 # The format of this file is described at http://meme-suite.org/doc/fimo-output-format.html.
 # fimo --oc /input/puma_out/BPV2/program_files/E1BS --norc --verbosity 1 --thresh 1.0E-1 --bgfile /data/background_model_E1BS_new.txt /data/E1BS_motif_new.txt /input/puma_out/BPV2/program_files/puma_urr.fa

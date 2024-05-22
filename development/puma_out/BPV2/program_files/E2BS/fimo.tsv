@@ -6,6 +6,6 @@ ACCGNWWNCGGT	MEME-1	URR	657	668	+	14.7931	6.77e-06	0.00155	accgctcccggt
 ACCGNWWNCGGT	MEME-1	URR	100	111	+	10.8793	6.48e-05	0.0112	accacacccggt
 ACCGNWWNCGGT	MEME-1	URR	408	419	+	10.5862	7.36e-05	0.0112	accagaactggt
 
-# FIMO (Find Individual Motif Occurrences): Version 5.0.2 compiled on May 21 2024 at 23:42:54
+# FIMO (Find Individual Motif Occurrences): Version 5.0.2 compiled on May 22 2024 at 03:40:33
 # The format of this file is described at http://meme-suite.org/doc/fimo-output-format.html.
 # fimo --oc /input/puma_out/BPV2/program_files/E2BS --norc --verbosity 1 --thresh 1.0E-4 /data/E2BS_motif_new.txt /input/puma_out/BPV2/program_files/puma_urr.fa

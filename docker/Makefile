@@ -3,7 +3,7 @@ DATA_DIR = $(shell pwd)/../data_dir
 DEV_DIR = $(shell pwd)/../development
 
 img:
-	docker build --tag=$(TAG) .
+	docker build --no-cache --tag=$(TAG) .
 
 shell:
 	docker run --rm -it $(TAG) /bin/bash

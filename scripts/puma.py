@@ -44,6 +44,7 @@ from Bio import AlignIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 #from Bio.Alphabet import IUPAC
+from Bio.Alphabet import generic_dna
 from Bio.SeqFeature import SeqFeature
 from Bio.SeqFeature import FeatureLocation
 from Bio.SeqFeature import CompoundLocation
@@ -408,8 +409,8 @@ def align_verify_gene(gene, accession, name, args):
             sequence_file.write("{}\n".format(known_gene[key]))
 
     if find_executable('muscle'):
-        os.system("muscle -in "+unaligned+" -out "+aligned)
         # DW os.system("muscle -align "+unaligned+" -output "+aligned)
+        os.system("muscle -in "+unaligned+" -out "+aligned)
         #cline = MuscleCommandline(input=unaligned, out=aligned, verbose=False)
         #stdout, stderr = cline()
     else:
@@ -1923,7 +1924,10 @@ def to_genbank(virus, for_user_dir):
 
 
     sequence_string = virus['genome']
+
+    sequence_string.seq.alphabet = generic_dna
     sequence_object = Seq(sequence_string)
+
     record = SeqRecord(sequence_object,
     			annotations={"molecule_type": "ambiguous_DNA"},
                        id=ID,  # random accession number
@@ -1977,6 +1981,7 @@ def to_genbank(virus, for_user_dir):
                 "translation": spliced.translate()}
             feature = SeqFeature(join, type='CDS', qualifiers=notes)
             record.features.append(feature)
+
     gb_out = os.path.join(for_user_dir, '{}.gb'.format(virus['accession']))
     output_file = open(gb_out, 'a')
     SeqIO.write(record, output_file, 'genbank')
