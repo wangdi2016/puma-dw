@@ -987,7 +987,8 @@ def align_splice_acceptor(virus, args):
             sequence_file.write("{}\n".format(known_E2[key]))
 
     #cline = MuscleCommandline(input=unaligned, out=aligned, verbose=False)
-    os.system("muscle -align "+unaligned+" -output "+aligned)
+    # DW os.system("muscle -align "+unaligned+" -output "+aligned)
+    os.system("muscle -in "+unaligned+" -out "+aligned)
     #stdout, stderr = cline()
     return aligned
 # --------------------------------------------------
@@ -1131,7 +1132,8 @@ def align_splice_donor_e1(virus, args):
             sequence_file.write("{}\n".format(known_E1[key]))
 
     #cline = MuscleCommandline(input=unaligned, out=aligned, verbose=False)
-    os.system("muscle -align "+unaligned+" -output "+aligned)
+    # DW os.system("muscle -align "+unaligned+" -output "+aligned)
+    os.system("muscle -in "+unaligned+" -out "+aligned)
 
     #stdout, stderr = cline()
 
@@ -1295,7 +1297,8 @@ def align_splice_donor_e8(virus, args):
 
     #cline = MuscleCommandline(input=unaligned, out=aligned, verbose=False)
     #stdout, stderr = cline()
-    os.system("muscle -align "+unaligned+" -output "+aligned)
+    # DW os.system("muscle -align "+unaligned+" -output "+aligned)
+    os.system("muscle -in "+unaligned+" -out "+aligned)
     return aligned
 # --------------------------------------------------
 def find_e8(virus, args, e8_start):
