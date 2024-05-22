@@ -1,5 +1,7 @@
 # DW version of PUMA
 
+Update BioPython from 1.77 to 1.78 and removed "-align" from muscule command lines
+
 Original version of PUMA can be found here. 
 
 https://github.com/KVD-lab/puma
